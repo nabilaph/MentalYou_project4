@@ -1,6 +1,6 @@
 # MentalYou_project4
 
-MentalYou : Psychology Consultation Website
+MentalYou, Psychology Consultation Website
 
 Group Member :
 1. Betari Qanitah Zulfa
