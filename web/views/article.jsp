@@ -28,7 +28,7 @@
                 <p>First, lets start with getting to know what type of mental health issues 
                    that you feel 
                     this whole time</p>
-                <h3><a href="mental.jsp">Click Here!</a></h3>
+                <h3><a href="mentalhealth">Click Here!</a></h3>
                 
             </div>
         </div>
@@ -41,7 +41,7 @@
             <div class="quotes2">
                 <p>If you ever feel stress and need something to make you relax <br>
                  we have some tips for you!</p>
-                    <h3><a href="projekterapy.jsp">Useful Tips!</a></h3>
+                    <h3><a href="selfterapy">Useful Tips!</a></h3>
             </div>
         </div>
         <!--content 3-->
@@ -68,7 +68,7 @@
             </div>
             <div class="heading2">
                 <h1>Books <br> Recommendation</h1>
-                <h3><a href="books.jsp">Books Details</a></h3>
+                <h3><a href="books">Books Details</a></h3>
             </div>
         </div>
         

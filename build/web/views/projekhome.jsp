@@ -38,7 +38,7 @@
                     by reading our articles <br>
                     and you can <span style="color: #6c2e2e;">talk to us</span>!
                 </h1>
-                <h3><a href="projekconsul.jsp">check out more!</a></h3>
+                <h3><a href="consultation">check out more!</a></h3>
             </div>
         </div>
         <!-- scroll content 3 -->
@@ -48,7 +48,7 @@
                 <h1>check our articles for a lot of insightful 
                     information about mental health
                 </h1>
-                <h3><a href="article.jsp">go to articles 
+                <h3><a href="article">go to articles 
                     <i class="fas fa-long-arrow-alt-right" style="font-size: 30px;"></i>
                     </a>
                 </h3>
