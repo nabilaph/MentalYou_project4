@@ -11,14 +11,14 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Psychology Consultant Website"/>
         </jsp:include>
-        <link href="css/projekhome.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/assets/css/projekhome.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
         <!-- scroll content 1 -->
         <div id="content1">
                 <div class="icon1">
-                    <img class="yoga" src="../public/assets/Mental.png" alt="yoga-icon" width="420" height="420">
+                    <img class="yoga" src="../public/assets/img/Mental.png" alt="yoga-icon" width="420" height="420">
                 </div>
                 <div class="quotes1">
                     <h1>love your <br>
@@ -32,7 +32,7 @@
                 </div>    
         </div>
         <!-- scroll content 2 -->
-        <div id="content2" style="background-image: url(../public/assets/bgpage2.png);">
+        <div id="content2" style="background-image: url(../public/assets/img/bgpage2.png);">
             <div class="quotes2">
                 <h1>heal your stressful day <br>
                     by reading our articles <br>
@@ -43,7 +43,7 @@
         </div>
         <!-- scroll content 3 -->
         <div id="content3">
-            <img src="../public/assets/manyface.jpeg" alt="manyface" width="550" height="385">
+            <img src="../public/assets/img/manyface.jpeg" alt="manyface" width="550" height="385">
             <div class="quotes3">
                 <h1>check our articles for a lot of insightful 
                     information about mental health

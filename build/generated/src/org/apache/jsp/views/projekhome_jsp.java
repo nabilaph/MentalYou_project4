@@ -50,7 +50,7 @@ public final class projekhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "layouts/head.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("title", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Psychology Consultant Website", request.getCharacterEncoding()), out, false);
       out.write("\n");
-      out.write("        <link href=\"css/projekhome.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <link href=\"../public/assets/projekhome.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
@@ -73,7 +73,7 @@ public final class projekhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>    \n");
       out.write("        </div>\n");
       out.write("        <!-- scroll content 2 -->\n");
-      out.write("        <div id=\"content2\" style=\"background-image: url(public/assets/bgpage2.png);\">\n");
+      out.write("        <div id=\"content2\" style=\"background-image: url(../public/assets/img/bgpage2.png);\">\n");
       out.write("            <div class=\"quotes2\">\n");
       out.write("                <h1>heal your stressful day <br>\n");
       out.write("                    by reading our articles <br>\n");
@@ -84,7 +84,7 @@ public final class projekhome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("        <!-- scroll content 3 -->\n");
       out.write("        <div id=\"content3\">\n");
-      out.write("            <img src=\"public/assets/manyface.jpeg\" alt=\"manyface\" width=\"550\" height=\"385\">\n");
+      out.write("            <img src=\"../public/assets/img/manyface.jpeg\" alt=\"manyface\" width=\"550\" height=\"385\">\n");
       out.write("            <div class=\"quotes3\">\n");
       out.write("                <h1>check our articles for a lot of insightful \n");
       out.write("                    information about mental health\n");

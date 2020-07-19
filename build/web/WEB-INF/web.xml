@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
+    <servlet>
+        <servlet-name>projekhomeServlet</servlet-name>
+        <servlet-class>Servlet.projekhomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>aboutServlet</servlet-name>
+        <servlet-class>Servlet.aboutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>articleServlet</servlet-name>
+        <servlet-class>Servlet.articleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>booksServlet</servlet-name>
+        <servlet-class>Servlet.booksServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>projekterapyServlet</servlet-name>
+        <servlet-class>Servlet.projekterapyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>projekconsulServlet</servlet-name>
+        <servlet-class>Servlet.projekconsulServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>formconsulServlet</servlet-name>
+        <servlet-class>Servlet.formconsulServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mentalServlet</servlet-name>
+        <servlet-class>Servlet.mentalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>projekhomeServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>aboutServlet</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>articleServlet</servlet-name>
+        <url-pattern>/article</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>booksServlet</servlet-name>
+        <url-pattern>/books</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>projekterapyServlet</servlet-name>
+        <url-pattern>/selfterapy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>projekconsulServlet</servlet-name>
+        <url-pattern>/consultation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>formconsulServlet</servlet-name>
+        <url-pattern>/consultationform</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mentalServlet</servlet-name>
+        <url-pattern>/mentalhealth</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

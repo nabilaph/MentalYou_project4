@@ -11,17 +11,17 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Articles"/>
         </jsp:include>
-        <link href="css/article.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/assets/css/article.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
         <!-- scroll content 1 -->
         <div id="content1">
             <div class="icon2">
-                <img src="../public/assets/pinkbg.png" alt="pink-bg" width="700" height="100">
+                <img src="../public/assets/img/pinkbg.png" alt="pink-bg" width="700" height="100">
             </div>
             <div class="icon3">
-                <img src="../public/assets/brainimg.jpg" alt="brain-img" width="400" height="400">
+                <img src="../public/assets/img/brainimg.jpg" alt="brain-img" width="400" height="400">
                 </div>
             <div class="quotes1">
                 <h1>Get To Know You</h1>
@@ -47,19 +47,19 @@
         <!--content 3-->
         <div id="content3">
             <div class="book1">
-                <img src="../public/assets/book1.png" alt="book1" width="100" height="120">
+                <img src="../public/assets/img/book1.png" alt="book1" width="100" height="120">
             </div>
             <div class="book2">
-                <img src="../public/assets/book2.jpg" alt="book-2" width="100" height="120">
+                <img src="../public/assets/img/book2.jpg" alt="book-2" width="100" height="120">
             </div>
             <div class="book3">
-                <img src="../public/assets/book3.jpg" alt="book-3" width="100" height="120">
+                <img src="../public/assets/img/book3.jpg" alt="book-3" width="100" height="120">
             </div>
             <div class="bg1">
-                <img src="../public/assets/pinkbg.png" alt="pink1" width="1200" height="10">
+                <img src="../public/assets/img/pinkbg.png" alt="pink1" width="1200" height="10">
             </div>
             <div class="bg2">
-                <img src="../public/assets/pinkbg.png" alt="pink2" width="800" height="10">
+                <img src="../public/assets/img/pinkbg.png" alt="pink2" width="800" height="10">
             </div>
             <div class="quotes3">
                 <p><i class="fas fa-quote-left"></i> Reading gives us <br> someplace to go <br>

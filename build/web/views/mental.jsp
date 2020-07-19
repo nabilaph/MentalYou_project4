@@ -11,15 +11,15 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Mental Health Article"/>
         </jsp:include>
-        <link href="css/mentalhealth.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/assets/css/mentalhealth.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
        <!--content1-->
         <div id="content1">
-           <div class="img"><img src="../public/assets/pink.jpeg" alt="bg"></div>
+           <div class="img"><img src="../public/assets/img/pink.jpeg" alt="bg"></div>
             <div class="quotes1">
-                <div class="ijo"><img src="../public/assets/ijo.jpeg" alt="ijo" width="300" height="300"></div>
+                <div class="ijo"><img src="../public/assets/img/ijo.jpeg" alt="ijo" width="300" height="300"></div>
                 <h1><span style="color: #6c2e2e;">What is mental health?</span> <br>
                 Mental health is the ability to adjust to yourself,<br>
                  with others and the community and <br>
@@ -31,7 +31,7 @@
         <!--content2-->
         
         <div id="content2">
-            <div class="image"><img src="../public/assets/tumblr.jpg" alt="bg" width="100%" height="500"></div>
+            <div class="image"><img src="../public/assets/img/tumblr.jpg" alt="bg" width="100%" height="500"></div>
             <div class="quotes2">
                 <h1>
                     <span style="color: #6c2e2e;">Type of mental health :</span> <br>
@@ -46,8 +46,8 @@
         </div>
         <!--content3-->
         <div id="content3">
-            <div class="background"> <img src="../public/assets/pinkbg.png" alt="pink" width="1350" height="500"></div>
-            <div class="ungu"> <img src="../public/assets/ungu.jpeg" alt="ungu" width="300" height="300"> </div>
+            <div class="background"> <img src="../public/assets/img/pinkbg.png" alt="pink" width="1350" height="500"></div>
+            <div class="ungu"> <img src="../public/assets/img/ungu.jpeg" alt="ungu" width="300" height="300"> </div>
             <div class="quotes3">
                 <h1><span style="color: #6c2e2e;">Mental Health Medicine</span><br>
                 1. Psychotherapy<br>

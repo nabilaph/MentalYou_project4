@@ -11,13 +11,13 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "About Us"/>
         </jsp:include>
-        <link href="css/about.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/assets/css/about.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
          <jsp:include page='layouts/navbar.jsp'></jsp:include>
         <!--content1-->
         <div id="content1">
-            <img class="yoga" src="../public/assets/MentalYou-logo.png" alt="MentalYou-logo.png" width="420" height="420">
+            <img class="yoga" src="../public/assets/img/MentalYou-logo.png" alt="MentalYou-logo.png" width="420" height="420">
             <div class="quotes1">
                 <h1>Mental condition are the emotional<br>
                     foundation that affect daily<br>
@@ -30,7 +30,7 @@
         <!--content2-->
         
         <div id="content2">
-            <img src="../public/assets/7.png" alt="bg" width="1800" height="500">
+            <img src="../public/assets/img/7.png" alt="bg" width="1800" height="500">
             <div class="quotes2">
                 <h1>
                     When a person experiences mental<br>
@@ -44,12 +44,12 @@
             </div>
         </div>
         <div class="gambar">
-            <img src="../public/assets/selfterapi.jpeg" style="display: inline-block;" alt="girl" width="350" height="350">
+            <img src="../public/assets/img/selfterapi.jpeg" style="display: inline-block;" alt="girl" width="350" height="350">
 
         </div>
         <!--content3-->
         <div id="content3">
-            <img class="yoga" src="../public/assets/MentalYou-logo.png" alt="MentalYou-logo.png" width="420" height="420">
+            <img class="yoga" src="../public/assets/img/MentalYou-logo.png" alt="MentalYou-logo.png" width="420" height="420">
             <div class="quotes3">
                 <h1>Our website provides<br>
                 Articles and Consultation.<br>

@@ -11,7 +11,7 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Self Therapy Article"/>
         </jsp:include>
-        <link href="css/projekterapy.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/assets/css/projekterapy.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
@@ -19,7 +19,7 @@
             <h1>How To Self-Theraphy</h1>
             <br><br><br>
             <div class="content">
-                <img src="../public/assets/selfterapi-1.jpeg" alt="" width="260vw" height="auto" >
+                <img src="../public/assets/img/selfterapi-1.jpeg" alt="" width="260vw" height="auto" >
                 <p>Living with mental illness is not easy. It’s a consistent problem 
                 without a clear solution. While treatments like medication and 
                 psychotherapy are incredibly helpful, sometimes people experiencing 
