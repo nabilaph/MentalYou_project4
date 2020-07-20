@@ -1,6 +1,6 @@
 <!-- footer -->
         <div id="footer">
-            <img src="../public/assets/MentalYou-logo.png" alt="MentalYou-logo" height="120" width="120"/>
+            <img src="public/assets/backend/img/MentalYou-logo.png" alt="MentalYou-logo" height="120" width="120"/>
             <h4>get to know us!</h4>
             <br>
             <div class="socmed">

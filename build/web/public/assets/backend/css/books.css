@@ -82,6 +82,24 @@ body{
     margin-left: -85px;
 }
 
+.profile{
+    font-size: 30px;
+    float: right;
+    margin: -43px 35px 0 0;
+}
+
+.profile a i {
+    padding: 10px 20px 10px 20px;
+    color: #6c2e2e;
+    text-align: center;
+    padding: 5px;
+}
+
+.profile a i:hover{
+    border-radius: 20%;
+    background-color: #f1d4cd;
+}
+
 #content1{
     background-color:#fff3d1 ;
     width: 100%;

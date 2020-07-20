@@ -11,7 +11,7 @@
          <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Book Recommendation Article"/>
         </jsp:include>
-        <link href="../public/assets/css/books.css" rel="stylesheet" type="text/css"/>
+        <style><%@include file="/public/assets/backend/css/books.css" %></style>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
@@ -19,13 +19,13 @@
         <div id="content1">
             <h1> <span style="color: #6c2e2e;">This Week Books</span> </h1>
             <div class="iconbk">
-                <img src="../public/assets/img/pinkbg.png" alt="pinkbg" width="720" height="400">
+                <img src="public/assets/backend/img/pinkbg.png" alt="pinkbg" width="720" height="400">
             </div>
             <div class="iconbk2">
-                <img src="../public/assets/img/line.png" alt="lineimg" width="350" height="350">
+                <img src="public/assets/backend/img/line.png" alt="lineimg" width="350" height="350">
             </div>
             <div class="iconbk3"> 
-                <img src="../public/assets/img/book2.jpg" alt="book2" width="300" height="380">
+                <img src="public/assets/backend/img/book2.jpg" alt="book2" width="300" height="380">
             </div>
             <div class="quotes1">
                 <h2>How Your Mind Can Heal Your Body</h2>
@@ -42,12 +42,12 @@
         <div id="content2">
             <div class="image">
                 <div class="iconbk4">
-                    <img src="../public/assets/img/pinkbg.png" alt="pinkbg" width="500" height="300">    
+                    <img src="public/assets/backend/img/pinkbg.png" alt="pinkbg" width="500" height="300">    
                     <div class="iconbk5">
-                        <img src="../public/assets/img/flowerimg.png" alt="flowerimg" width="350" height="400">     
+                        <img src="public/assets/backend/img/flowerimg.png" alt="flowerimg" width="350" height="400">     
                     </div>
                     <div class="iconbk6">
-                        <img src="../public/assets/img/book3.jpg" alt="book3" width="300" height="380">
+                        <img src="public/assets/backend/img/book3.jpg" alt="book3" width="300" height="380">
                     </div>
                 </div>
             </div>
@@ -62,13 +62,13 @@
         <div id="content3">
             <div class="image2">
                 <div class="iconbk7">
-                    <img src="../public/assets/img/pinkbg.png" alt="pinkbg" width="900" height="400">
+                    <img src="public/assets/backend/img/pinkbg.png" alt="pinkbg" width="900" height="400">
                 </div>
                 <div class="iconbk8">
-                    <img src="../public/assets/img/line.png" alt="line" width="500" height="350">
+                    <img src="public/assets/backend/img/line.png" alt="line" width="500" height="350">
                 </div>
                 <div class="iconbk9">
-                    <img src="../public/assets/img/book1.png" alt="book3" width="300" height="380">
+                    <img src="public/assets/backend/img/book1.png" alt="book3" width="300" height="380">
                 </div>
             </div>
             <div class="quotes3">

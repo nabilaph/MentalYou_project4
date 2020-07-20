@@ -11,13 +11,13 @@
         <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Consultation Form"/>
         </jsp:include>
-        <link href="../public/assets/css/formconsul.css" rel="stylesheet" type="text/css"/>
+        <style><%@include file="/public/assets/backend/css/formconsul.css" %></style>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
         
         <!-- scroll content 1 -->
-        <div id="content1" style="background-image: url(../public/assets/img/3ed.png);">
+        <div id="content1" style="background-image: url(public/assets/backend/img/3ed.png);">
             <div class="headertext">
                 <h1>Consultation Form</h1>
                 <p>Fill in your data so we can contact you for further information!</p>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- scroll content 2 -->
-        <div id="content2" style="background-image: url(../public/assets/img/bgfull.jpeg);">
+        <div id="content2" style="background-image: url(public/assets/backend/img/bgfull.jpeg);">
             <form name="Form1"  action="#" method="get">
 
                 <label for="fullname">Full Name</label><br>

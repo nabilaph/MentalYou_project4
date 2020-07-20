@@ -11,19 +11,19 @@
          <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Consultation"/>
         </jsp:include>
-        <link href="../public/assets/css/projekconsul.css" rel="stylesheet" type="text/css"/>
+        <style><%@include file="/public/assets/backend/css/projekconsul.css" %></style>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
         <!--scroll content 1-->
         <div id="content1">
-            <img src="../public/assets/img/pink-consul.jpg" alt="">
+            <img src="public/assets/backend/img/pink-consul.jpg" alt="">
             <div class="circle"></div>
             <div class="headertext">
                 <h1>Consultation</h1>
             </div>
         </div>
-        <div id="content2" style="background-image: url(../public/assets/img/cons-2.png);">
+        <div id="content2" style="background-image: url(public/assets/backend/img/cons-2.png);">
             <div>
                 <h1>Why we need consultation?</h1>
                 <p>Consultation will make you feel better! 
@@ -34,7 +34,7 @@
             especially you talk with psychologist that can be trusted.</p>
             </div>
         </div>
-        <div id="content3" style="background-image: url(../public/assets/img/5.png);">
+        <div id="content3" style="background-image: url(public/assets/backend/img/5.png);">
             <div>
                 <h1 style="font-family: 'playfair'; color: #926a69;">
                     Consultation Package</h1>
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div id="content4" style="background-image: url(../public/assets/img/7.png);">
+        <div id="content4" style="background-image: url(public/assets/backend/img/7.png);">
             <div class="content4-header">
                 <h1 style="color: #926a69;"><b>How to do consultation?</b></h1>
             </div>
