@@ -29,7 +29,7 @@
 
         <!-- scroll content 2 -->
         <div id="content2" style="background-image: url(public/assets/backend/img/bgfull.jpeg);">
-            <form name="Form1"  action="#" method="get">
+            <form name="Form1"  action="consultationform" method="get">
 
                 <label for="fullname">Full Name</label><br>
                 <input class="fullname" name="fullname" type="text" ><br><br><br>

@@ -5,8 +5,14 @@
  */
 package Servlet;
 
+import Controller.MainController;
+import Model.UserModel;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Bia
  */
-public class aboutServlet extends HttpServlet {
+public class signupServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,8 +39,7 @@ public class aboutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-            RequestDispatcher dispatch = request.getRequestDispatcher("/views/about.jsp");
+            RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
             dispatch.forward(request, response);
         }
     }
@@ -51,7 +56,8 @@ public class aboutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
+            dispatch.forward(request, response);
     }
 
     /**
@@ -65,7 +71,30 @@ public class aboutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String email = request.getParameter("email");
+            
+            UserModel model = new UserModel();
+            model.setUsername(username);
+            model.setPassword(password);
+            model.setEmail(email);
+            
+            MainController mc = new MainController();
+            boolean check = mc.createuser(model);
+            
+            if(check){
+                request.setAttribute("message", "Registeration Successful!");
+                response.sendRedirect("home?username="+ username);
+            }
+            else{
+                RequestDispatcher req = request.getRequestDispatcher("/views/signup.jsp");
+            }
+            
+        } catch (SQLException e) {
+            Logger.getLogger(signupServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**
