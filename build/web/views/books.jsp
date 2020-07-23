@@ -11,7 +11,7 @@
          <jsp:include page='layouts/head.jsp'>
             <jsp:param name= "title" value= "Book Recommendation Article"/>
         </jsp:include>
-        <style><%@include file="/public/assets/backend/css/books.css" %></style>
+        <link href="public/assets/backend/css/books.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>

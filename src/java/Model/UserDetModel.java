@@ -5,16 +5,30 @@
  */
 package Model;
 
-import java.sql.Date;
-
 /**
  *
  * @author Bia
  */
 public class UserDetModel {
     
-    private String fullname, nickname, email, phoneNum, pack;
-    private Date bday;
+    private String fullname, username, nickname, email, phoneNum, pack, bday;
+    private String consul_time, consul_date, consul_via, consul_doctor, payment;
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getFullname() {
         return fullname;
@@ -56,11 +70,43 @@ public class UserDetModel {
         this.pack = pack;
     }
 
-    public Date getBday() {
+    public String getBday() {
         return bday;
     }
 
-    public void setBday(Date bday) {
+    public void setBday(String bday) {
         this.bday = bday;
+    }
+    
+    public String getConsul_time() {
+        return consul_time;
+    }
+
+    public void setConsul_time(String consul_time) {
+        this.consul_time = consul_time;
+    }
+
+    public String getConsul_date() {
+        return consul_date;
+    }
+
+    public void setConsul_date(String consul_date) {
+        this.consul_date = consul_date;
+    }
+
+    public String getConsul_via() {
+        return consul_via;
+    }
+
+    public void setConsul_via(String consul_via) {
+        this.consul_via = consul_via;
+    }
+
+    public String getConsul_doctor() {
+        return consul_doctor;
+    }
+
+    public void setConsul_doctor(String consul_doctor) {
+        this.consul_doctor = consul_doctor;
     }
 }

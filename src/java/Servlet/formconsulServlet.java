@@ -5,13 +5,20 @@
  */
 package Servlet;
 
+import Controller.UserdetController;
+import Model.UserDetModel;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,8 +40,7 @@ public class formconsulServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            RequestDispatcher dispatch = request.getRequestDispatcher("/views/formconsul.jsp");
-            dispatch.forward(request, response);
+            
         }
     }
 
@@ -50,7 +56,9 @@ public class formconsulServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+            
+            RequestDispatcher dispatch = request.getRequestDispatcher("/views/formconsul.jsp");
+            dispatch.forward(request, response);
     }
 
     /**
@@ -64,7 +72,40 @@ public class formconsulServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            HttpSession session = request.getSession(true);
+            
+            String username = session.getAttribute("username").toString();
+            
+            String fullname = request.getParameter("fullname");
+            String nickname = request.getParameter("nickname");
+            String email = request.getParameter("email");
+            String bday = request.getParameter("birthday");
+            String phone = request.getParameter("phonenum");
+            String pack = request.getParameter("package");
+            
+            UserDetModel model = new UserDetModel();
+            model.setUsername(username);
+            model.setEmail(email);
+            model.setFullname(fullname);
+            model.setNickname(nickname);
+            model.setBday(bday);
+            model.setPhoneNum(phone);
+            model.setPack(pack);
+            
+            UserdetController mc = new UserdetController();
+            boolean check = mc.createUserDet(model);
+            
+        
+        
+            if(check){
+                //go to index page
+                response.sendRedirect("");
+            }
+            
+        } catch (SQLException e) {
+            Logger.getLogger(formconsulServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**

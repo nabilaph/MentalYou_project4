@@ -6,10 +6,10 @@
 package Servlet;
 
 import Controller.MainController;
-import Model.UserModel;
+import Model.UserDetModel;
+import Controller.UserdetController;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,12 +18,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Bia
  */
-public class signupServlet extends HttpServlet {
+public class editprofileServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,8 +40,7 @@ public class signupServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
-            dispatch.forward(request, response);
+            
         }
     }
 
@@ -56,8 +56,21 @@ public class signupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
+        try {
+            HttpSession session = request.getSession(true);
+            
+            String username = session.getAttribute("username").toString();
+        
+            UserdetController mc = new UserdetController();
+            UserDetModel model = mc.showeditprofile(username);
+
+            request.setAttribute("user", model);
+            RequestDispatcher dispatch = request.getRequestDispatcher("/views/editprofile.jsp"); //yang diganti yg tanda kutip
             dispatch.forward(request, response);
+
+        } catch (SQLException e) {
+            Logger.getLogger(editprofileServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**
@@ -72,28 +85,29 @@ public class signupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            String fullname = request.getParameter("fullname");
+            String nickname = request.getParameter("nickname");
+            String phone = request.getParameter("phonenum");
             String email = request.getParameter("email");
+            String bday = request.getParameter("birthday");
             
-            UserModel model = new UserModel();
-            model.setUsername(username);
-            model.setPassword(password);
+            UserDetModel model = new UserDetModel();
+            model.setFullname(fullname);
+            model.setNickname(nickname);
+            model.setPhoneNum(phone);
             model.setEmail(email);
+            model.setBday(bday);
             
-            MainController mc = new MainController();
-            boolean check = mc.createuser(model);
+            UserdetController uc = new UserdetController();
+            boolean check = uc.updateprofile(model);
             
             if(check){
-                response.sendRedirect("login");
-            }
-            else{
-                RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
-            dispatch.forward(request, response);
+                //go to profile page
+                response.sendRedirect("profile");
             }
             
         } catch (SQLException e) {
-            Logger.getLogger(signupServlet.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(editprofileServlet.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

@@ -64,15 +64,15 @@ public class projekhomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
+       processRequest(request, response);
 
-            response.setContentType("text/jsp");  
-            PrintWriter out = response.getWriter();  
-
-            String n=request.getParameter("username");  
-              
-
-            out.close();  
+//            response.setContentType("text/jsp");  
+//            PrintWriter out = response.getWriter();  
+//
+//            String n=request.getParameter("username");  
+//              
+//
+//            out.close();  
     }
 
     /**

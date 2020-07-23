@@ -12,6 +12,7 @@ package Query;
 public class MainQuery {
     public String createuser = "INSERT INTO `user` (`user_email`, `user_username`, "
                             + "`user_password`) VALUES (?,?,?);";
-    public String ceklogin = "SELECT * FROM user WHERE user_username=? AND user_password=?";
+    public String ceklogin = "SELECT * FROM user WHERE user_username=?";
+    
     
 }

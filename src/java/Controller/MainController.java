@@ -32,28 +32,33 @@ public class MainController extends BaseController{
         return this.preparedStatement(map, sql);
     }
     
-    public UserModel ceklogin(String username, String password) throws SQLException{
-        UserModel model = new UserModel();
-        
-        Map<Integer, Object> map = new HashMap<>();
-        map.put(1, username);
-        map.put(2, password);
-
+    public ArrayList ceklogin(UserModel model) throws SQLException {
+        Map<Integer, Object> map = new HashMap();
+        map.put(1, model.getUsername());
         
         String sql = this.query.ceklogin;
+        
         ResultSet rs = this.getWithParameter(map, sql);
         
-        if (rs.next()) {
-            model.setUsername(rs.getString("user_username"));
-            model.setPassword(rs.getString("user_password"));
+        while(rs.next()){
+            String pass = rs.getString("user_password");
+            boolean check = model.getPassword().equals(pass);
             
-            return model;
-        }else{
-            return null;
+            if(check){
+                this.arraylist.add(rs.getString("user_id"));
+                this.arraylist.add(rs.getString("user_email"));
+                this.arraylist.add(rs.getString("user_username"));
+            }
         }
         
-        
+        return this.arraylist;
     }
+    
+    
+        
+    
+        
+    
     
 //     public ArrayList getUser() throws SQLException {
 //        String query = this.query.showuser;
@@ -70,24 +75,7 @@ public class MainController extends BaseController{
 //        return arraylist;
 //    }
 //    
-//    public ArrayList getUserDet() throws SQLException {
-//        String query = this.query.showuserdet;
-//        ResultSet rs = this.get(query);
-//        
-//        while (rs.next()) {
-//            UserDetModel model = new UserDetModel();
-//            model.setFullname(rs.getString("userdet_fullname"));
-//            model.setNickname(rs.getString("userdet_nickname"));
-//            model.setEmail(rs.getString("user_email"));
-//            model.setBday(rs.getDate("userdet_bday"));
-//            model.setPhoneNum(rs.getString("userdet_phone"));
-//            model.setPack(rs.getString("userdet_package"));
-//            
-//            arraylist.add(model);
-//        }
-//        
-//        return arraylist;
-//    }
+    
     
 //    public boolean update (MainModel model) throws SQLException{
 //        Map<Integer, Object> map = new HashMap();

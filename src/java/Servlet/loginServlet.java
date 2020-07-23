@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,6 +43,7 @@ public class loginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
         }
     }
 
@@ -57,8 +60,14 @@ public class loginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-            RequestDispatcher dispatch = request.getRequestDispatcher("/views/login.jsp");
+            HttpSession session = request.getSession(true);
+        
+        if(session.getAttribute("auth") != null){
+            response.sendRedirect("");
+        } else{
+            RequestDispatcher dispatch = request.getRequestDispatcher("/views/login.jsp"); //yang diganti yg tanda kutip
             dispatch.forward(request, response);
+        }
     }
 
     /**
@@ -72,31 +81,31 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+         try {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             
-            MainController mc = new MainController();
-            UserModel model = mc.ceklogin(username, password);
-
-            if(model==null) { //prompt salah} 
-               
-//                out.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js\"></script>");
-//                out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>");
-//                out.println("<script>");
-//                out.println("   $document.ready(function(){");
-//                out.println("       swal ('WELCOME', ' ', 'error');");
-//                out.println("   });");
-//                out.println("</script>");
-
-                out.println("Username and Password Wrong");
-                
-                response.sendRedirect("login?status=wrong");
+            UserModel model = new UserModel();
+            model.setUsername(username);
+            model.setPassword(password);
             
-            } else {
-                response.sendRedirect("home?username="+username);
+            MainController ac = new MainController();
+            ArrayList check = ac.ceklogin(model);
+            
+            if(check.isEmpty()){
+                request.setAttribute("alert", "Username/Password is invalid!");
+                RequestDispatcher dispatch = request.getRequestDispatcher("/views/login.jsp"); //yang diganti yg tanda kutip
+                dispatch.forward(request, response);
+            } else{
+                //Go to index page
+                HttpSession session = request.getSession(true);
+                session.setAttribute("id", check.get(0).toString());
+                session.setAttribute("name", check.get(1).toString());
+                session.setAttribute("username", check.get(2).toString());
+                session.setAttribute("auth", true);
+                response.sendRedirect("profile?username="+username);
             }
-
+            
         } catch (SQLException e) {
             Logger.getLogger(loginServlet.class.getName()).log(Level.SEVERE, null, e);
         }

@@ -16,23 +16,13 @@
     <body>
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
         
-        <!-- scroll content 1 -->
-        <div id="content1" style="background-image: url(public/assets/backend/img/3ed.png);">
-            <div class="headertext">
-                <h1>Consultation Form</h1>
-                <p>Fill in your data so we can contact you for further information!</p>
-            </div>
-            <div class="chev">
-                <a href="#"><i class="fas fa-chevron-down"></i></a>
-            </div> 
-        </div>
 
         <!-- scroll content 2 -->
         <div id="content2" style="background-image: url(public/assets/backend/img/bgfull.jpeg);">
             <form name="Form1"  action="consultationform" method="POST">
 
                 <label for="fullname">Full Name</label><br>
-                <input class="fullname" name="fullname" type="text" required ><br><br><br>
+                <input class="fullname" name="fullname" type="text" value="${user.fullname}" required ><br><br><br>
                
                 <label for="nickname">Nickname</label><br>
                 <input class="nickname" name="nickname" type="text" required><br><br><br>

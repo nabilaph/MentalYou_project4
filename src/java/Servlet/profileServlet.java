@@ -5,11 +5,10 @@
  */
 package Servlet;
 
-import Controller.MainController;
-import Model.UserModel;
+import Controller.UserdetController;
+import Model.UserDetModel;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,12 +17,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Bia
  */
-public class signupServlet extends HttpServlet {
+public class profileServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,8 +39,15 @@ public class signupServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
-            dispatch.forward(request, response);
+//            HttpSession session = request.getSession(true);
+//            
+//            if (session.getAttribute("auth")==null){
+//                response.sendRedirect("login");
+//            }else{
+
+//                RequestDispatcher dispatch = request.getRequestDispatcher("/views/profile.jsp"); //yang diganti yg tanda kutip
+//                dispatch.forward(request, response);
+//            }
         }
     }
 
@@ -56,8 +63,21 @@ public class signupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
+        try {
+            HttpSession session = request.getSession(true);
+            String username = session.getAttribute("username").toString();
+        
+            UserdetController mc = new UserdetController();
+            UserDetModel model = mc.showprofile(username);
+
+            request.setAttribute("user", model);
+            
+            RequestDispatcher dispatch = request.getRequestDispatcher("/views/profile.jsp"); //yang diganti yg tanda kutip
             dispatch.forward(request, response);
+
+        } catch (SQLException e) {
+            Logger.getLogger(profileServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     /**
@@ -71,30 +91,7 @@ public class signupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String email = request.getParameter("email");
-            
-            UserModel model = new UserModel();
-            model.setUsername(username);
-            model.setPassword(password);
-            model.setEmail(email);
-            
-            MainController mc = new MainController();
-            boolean check = mc.createuser(model);
-            
-            if(check){
-                response.sendRedirect("login");
-            }
-            else{
-                RequestDispatcher dispatch = request.getRequestDispatcher("/views/signup.jsp");
-            dispatch.forward(request, response);
-            }
-            
-        } catch (SQLException e) {
-            Logger.getLogger(signupServlet.class.getName()).log(Level.SEVERE, null, e);
-        }
+        processRequest(request, response);
     }
 
     /**

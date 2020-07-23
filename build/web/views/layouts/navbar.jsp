@@ -14,8 +14,13 @@
                     </ul>
                 </nav>
             </div>
-            <div class="profile">
-              <a href="#"><i class="fas fa-user-circle"></i></a>  
-            </div>
-            
+            <% if ( session.getAttribute("username") != null) { %>
+                <div class="profile">
+                    <a href="login"><i class="fas fa-user-circle"></i></a>  
+                </div>
+            <% } else {%>
+                <div class="profile">
+                    <a href="profile"><i class="fas fa-user-circle"></i></a>  
+                </div>
+            <% } %>
         </div>
